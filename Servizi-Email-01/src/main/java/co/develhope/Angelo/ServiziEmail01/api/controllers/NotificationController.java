@@ -32,9 +32,9 @@ public class NotificationController {
             emailService.sendTo(studentToSendNotification.getEmail(), payload.getTitle(), payload.getText() );
             return ResponseEntity.status(HttpStatus.OK).build();
         } catch (Exception e) {
-            System.err.println("Error in notification controller" + e.getMessage());
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+            //System.err.println("Error in notification controller" + e.getMessage());
+            //e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("The server is broken");
         }
     }
 }
